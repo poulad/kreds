@@ -18,9 +18,9 @@
  */
 
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm")
     id("org.jetbrains.dokka") version "1.6.0"
-    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+//    id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     `java-library`
     `maven-publish`
     signing
@@ -53,16 +53,16 @@ tasks.test {
     finalizedBy(tasks.jacocoTestReport)
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            username.set(System.getProperty("SONATYPE_USERNAME"))
-            password.set(System.getProperty("SONATYPE_PASSWORD"))
-        }
-    }
-}
+//nexusPublishing {
+//    repositories {
+//        sonatype {
+//            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+//            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+//            username.set(System.getProperty("SONATYPE_USERNAME"))
+//            password.set(System.getProperty("SONATYPE_PASSWORD"))
+//        }
+//    }
+//}
 
 dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
